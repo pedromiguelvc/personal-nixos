@@ -7,6 +7,8 @@
       size = 12;
     };
 
+    shellIntegration.mode = "no-cursor";
+
     settings = {
       # Font
       bold_font = "0xProto Nerd Font Bold";
@@ -53,7 +55,6 @@
 
       # Mouse / shell
       hide_cursor_when_typing = "yes";
-      shell_integration = "no-cursor";
       enable_audio_bell = "no";
     };
   };

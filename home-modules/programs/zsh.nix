@@ -14,8 +14,6 @@
     syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
 
-    defaultKeymap = "viins";
-
     shellAliases = {
       ns = "sudo nixos-rebuild switch --flake ~/nixos#$(hostname)";
       nd = "nix develop";
@@ -92,6 +90,7 @@
     ];
 
     initContent = ''
+      bindkey -v
       source ~/.config/zsh/functions.zsh
       source ~/.config/zsh/p10k.zsh
     '';
