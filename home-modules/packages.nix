@@ -2,7 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    # Basics
     bat
     btop
     curl
@@ -20,8 +19,9 @@
     procps
     wlogout
     fastfetch
+    cliphist
+    libnotify
 
-    # Fonts
     nerd-fonts._0xproto
 
     lua-language-server
@@ -30,18 +30,15 @@
     luarocks
     stylua
     tree-sitter
-
     gh
-    # Desktop
+
     ashell
     brave
     hypridle
-    hyprlauncher
     hyprlock
     hyprpaper
     hyprshot
     hyprtoolkit
     rofi
-    swaynotificationcenter
   ];
 }

@@ -33,14 +33,6 @@
         max_workspaces = 10;
       };
 
-      updates = {
-        check_cmd = "checkupdates; paru -Qua";
-        update_cmd = ''
-          alacritty -e bash -c "paru; echo Done - Press enter to exit; read" &
-        '';
-        interval = 3600;
-      };
-
       tempo = {
         clock_format = "%a %d %b %R";
       };
@@ -61,6 +53,12 @@
         memory = {
           warn_threshold = 70;
           alert_threshold = 85;
+          format = "Fraction";
+        };
+
+        disk = {
+          warn_threshold = 80;
+          alert_threshold = 90;
           format = "Fraction";
         };
 
@@ -104,7 +102,6 @@
         brightness_indicator_format = "IconAndPercentage";
 
         indicators = [
-          "PowerProfile"
           "Network"
           "Brightness"
           "Audio"

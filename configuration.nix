@@ -76,10 +76,11 @@
   xdg.portal.enable = true;
   hardware.enableRedistributableFirmware = true;
   hardware.bluetooth.enable = true;
-  programs.hyprland.enable = true;
   programs.nix-ld.enable = true;
   programs.zsh.enable = true;
   virtualisation.docker.enable = true;
+  zramSwap.enable = true;
+  systemd.oomd.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

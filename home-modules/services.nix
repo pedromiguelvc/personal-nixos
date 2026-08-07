@@ -6,6 +6,7 @@
       notification-body-image-height = 80;
       notification-body-image-width = 120;
 
+      fit-to-screen = false;
       notification-window-preferred-output = "eDP-1";
       control-center-preferred-output = "eDP-1";
       positionY = "bottom";

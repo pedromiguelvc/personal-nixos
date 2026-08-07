@@ -1,16 +1,5 @@
-autoload -U add-zsh-hook
-
 zstyle ':completion:*' menu select
 setopt auto_menu menu_complete
-_auto_venv() {
-  if [[ -d ".venv" && -f ".venv/bin/activate" ]]; then
-    source .venv/bin/activate
-  elif [[ -n "$VIRTUAL_ENV" ]]; then
-    deactivate
-  fi
-}
-
-add-zsh-hook chpwd _auto_venv
 
 function _launch_claude_code() {
   claude

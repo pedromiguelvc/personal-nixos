@@ -1,17 +1,5 @@
 { pkgs, ... }:
 
-let
-  tmux-mode-indicator = pkgs.tmuxPlugins.mkTmuxPlugin {
-    pluginName = "tmux-mode-indicator";
-    version = "unstable";
-    src = pkgs.fetchFromGitHub {
-      owner = "MunifTanjim";
-      repo = "tmux-mode-indicator";
-      rev = "master";
-      hash = "sha256-SAzsn4LoG8Ju5t13/U3/ctlJQPyPgv2FjpPkWSeKbP0=";
-    };
-  };
-in
 {
   programs.tmux = {
     enable = true;
@@ -20,10 +8,12 @@ in
       resurrect
       continuum
       vim-tmux-navigator
-      tmux-mode-indicator
+      mode-indicator
       tmux-fzf
     ];
-
-    extraConfig = builtins.readFile ./config/tmux/tmux.conf;
+    extraConfig = builtins.readFile ./config/tmux/tmux.conf + ''
+      run-shell ${pkgs.tmuxPlugins.mode-indicator.rtp}
+      run-shell ${pkgs.tmuxPlugins.continuum.rtp}
+    '';
   };
 }

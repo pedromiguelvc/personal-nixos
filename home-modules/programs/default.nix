@@ -1,14 +1,14 @@
 {
-
   imports = [
-    ./tmux.nix
-    ./kitty.nix
+    ./ashell.nix
+    ./delta.nix
+    ./direnv.nix
     ./fzf.nix
     ./git.nix
+    ./kitty.nix
+    ./lazygit.nix
+    ./tmux.nix
     ./zoxide.nix
     ./zsh.nix
-    ./direnv.nix
-    ./ashell.nix
   ];
-
 }
