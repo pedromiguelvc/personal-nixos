@@ -16,10 +16,11 @@
 
     shellAliases = {
       ns = "sudo nixos-rebuild switch --flake ~/nixos#$(hostname)";
-      nd = "nix develop";
       nst = "sudo nixos-rebuild test --flake ~/nixos#$(hostname)";
       nsb = "sudo nixos-rebuild build --flake ~/nixos#$(hostname)";
-      nsu = "nix flake update ~/nixos";
+      nsu = "nix flake update";
+      nr = "nix run";
+      nd = "nix develop";
 
       ls = "eza --icons --group-directories-first";
       ll = "eza -lh --icons --group-directories-first";
@@ -34,11 +35,10 @@
 
       rm = "trash-put";
       v = "nvim";
-      t = "tmux";
+      t = "tmux attach || tmux";
       tl = "tmux ls";
       tk = "tmux kill-session -t";
       tks = "tmux kill-server";
-      ta = "tmux attach";
 
       gs = "git status -s";
       gss = "git status";
