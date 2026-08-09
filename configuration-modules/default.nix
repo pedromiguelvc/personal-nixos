@@ -1,7 +1,8 @@
 {
   imports = [
-    ./system.nix
-    ./services.nix
     ./hyprland.nix
+    ./services.nix
+    ./system.nix
+    ./users.nix
   ];
 }

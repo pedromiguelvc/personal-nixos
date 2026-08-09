@@ -50,19 +50,6 @@
     useXkbConfig = true; # use xkb.options in tty.
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.carburauto = {
-    isNormalUser = true;
-    description = "Carburauto";
-    extraGroups = [
-      "wheel"
-      "networkmanager"
-      "docker"
-    ]; # Enable ‘sudo’ for the user.
-    initialPassword = "changeme";
-    shell = pkgs.zsh;
-  };
-
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
