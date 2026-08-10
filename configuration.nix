@@ -28,6 +28,11 @@
       "flakes"
     ];
     auto-optimise-store = true;
+
+    trusted-users = [
+      "root"
+      "@wheel"
+    ];
   };
 
   nix.gc = {
@@ -74,6 +79,7 @@
 
   hardware.enableRedistributableFirmware = true;
   hardware.bluetooth.enable = true;
+  programs.hyprland.enable = true;
   programs.nix-ld.enable = true;
   programs.zsh.enable = true;
   programs.dconf.enable = true;
