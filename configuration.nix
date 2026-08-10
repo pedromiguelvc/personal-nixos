@@ -60,11 +60,23 @@
     vim
   ];
 
-  xdg.portal.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config = {
+      common.default = [ "gtk" ];
+      hyprland.default = [
+        "hyprland"
+        "gtk"
+      ];
+    };
+  };
+
   hardware.enableRedistributableFirmware = true;
   hardware.bluetooth.enable = true;
   programs.nix-ld.enable = true;
   programs.zsh.enable = true;
+  programs.dconf.enable = true;
   virtualisation.docker.enable = true;
   zramSwap.enable = true;
   systemd.oomd.enable = true;

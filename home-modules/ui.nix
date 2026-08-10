@@ -3,10 +3,23 @@
 
   home.pointerCursor = {
     enable = true;
-    gtk.enable = true;
-    x11.enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
-    size = 10;
+    size = 24;
   };
+
+  gtk = {
+    enable = true;
+    theme = {
+      package = pkgs.adw-gtk3;
+      name = "adw-gtk3-dark";
+    };
+
+    iconTheme = {
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus-Dark";
+    };
+  };
+
+  dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
 }
