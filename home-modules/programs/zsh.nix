@@ -50,7 +50,6 @@
       gk = "git checkout";
       glgg = "git log --oneline --graph --all --decorate";
       gdff = "git diff --output-indicator-new='+' --output-indicator-old='-'";
-      lg = "lazygit";
 
       # docker
       d = "docker";
