@@ -4,7 +4,7 @@
 
     systemd = {
       enable = true;
-      target = "hyrpland-session.target";
+      target = "graphical-session.target";
     };
 
     settings = {

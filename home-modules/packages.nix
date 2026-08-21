@@ -39,6 +39,5 @@
     hyprpaper
     hyprshot
     hyprtoolkit
-    rofi
   ];
 }

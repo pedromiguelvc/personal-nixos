@@ -6,7 +6,7 @@
     ./fzf.nix
     ./git.nix
     ./kitty.nix
-    ./rofi.nix
+    ./vicinae.nix
     ./lazygit.nix
     ./tmux.nix
     ./zoxide.nix
