@@ -8,7 +8,5 @@
       wlrobs
       obs-pipewire-audio-capture
     ];
-
-    enableVirtualCamera = true;
   };
 }
