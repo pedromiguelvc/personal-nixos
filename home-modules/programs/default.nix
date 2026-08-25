@@ -9,6 +9,7 @@
     ./vicinae.nix
     ./lazygit.nix
     ./tmux.nix
+    ./obs-studio.nix
     ./zoxide.nix
     ./zsh.nix
   ];

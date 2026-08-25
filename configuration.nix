@@ -40,6 +40,7 @@
     dates = "weekly";
     options = "--delete-older-than 7d";
   };
+  nix.optimise.automatic = true;
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
