@@ -32,7 +32,6 @@
     tree-sitter
     gh
 
-    ashell
     brave
     hypridle
     hyprlock
