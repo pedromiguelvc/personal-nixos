@@ -9,6 +9,7 @@
         showPanelJumps = true;
         showBottomLine = true;
         showCommandLog = true;
+        nerdFontsVersion = "3";
       };
       git.paging = [
         {
