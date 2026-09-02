@@ -4,7 +4,7 @@ setopt auto_menu
 _nixos-rebuild() {
   local subcmd="$1"; shift
   git -C ~/nixos add -A
-  sudo nixos-rebuild "$subcmd" --flake ~/nixos#"$(hostname)" "$@"
+  nh os "$subcmd" ~/nixos "$@"
 }
 
 ns()  { _nixos-rebuild switch "$@" }
