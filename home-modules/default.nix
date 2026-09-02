@@ -1,9 +1,9 @@
 {
   imports = [
     ./session.nix
-    ./packages.nix
     ./services.nix
     ./ui.nix
-    ./programs
+    ./packages.nix
+    ./packages
   ];
 }
