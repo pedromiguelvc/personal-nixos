@@ -7,9 +7,7 @@
     curl
     eza
     fd
-    fzf
     jq
-    neovim
     ripgrep
     trash-cli
     wl-clipboard
@@ -21,8 +19,6 @@
     fastfetch
     cliphist
     libnotify
-
-    nerd-fonts._0xproto
 
     lua-language-server
     nil
