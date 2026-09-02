@@ -22,25 +22,21 @@
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
-  nix.settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-    auto-optimise-store = true;
+  nix = {
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      auto-optimise-store = true;
 
-    trusted-users = [
-      "root"
-      "@wheel"
-    ];
+      trusted-users = [
+        "root"
+        "@wheel"
+      ];
+    };
+    optimise.automatic = true;
   };
-
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
-  };
-  nix.optimise.automatic = true;
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
