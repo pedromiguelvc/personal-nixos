@@ -18,8 +18,10 @@
   # services.libinput.enable = true;
 
   services.openssh.enable = true; # Enable the OpenSSH daemon.
-  services.displayManager.gdm.enable = true;
-  services.displayManager.defaultSession = "hyprland-uwsm";
+  services.displayManager = {
+    gdm.enable = true;
+    defaultSession = "hyprland-uwsm";
+  };
   services.blueman.enable = true;
   services.upower.enable = true;
   services.pipewire = {
