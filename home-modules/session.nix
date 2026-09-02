@@ -4,8 +4,10 @@
     KEYTIMEOUT = "1";
     _ZO_DOCTOR = "0";
 
-    FZF_DEFAULT_OPTS =
-      "--bind=tab:down,shift-tab:up --layout=reverse";
+    ZSH_TMUX_AUTOSTART = "true";
+    ZSH_TMUX_AUTOQUIT = "false";
+
+    FZF_DEFAULT_OPTS = "--bind=tab:down,shift-tab:up --layout=reverse";
   };
 
   home.sessionPath = [
