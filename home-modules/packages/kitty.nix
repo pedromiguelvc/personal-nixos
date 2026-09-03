@@ -4,7 +4,7 @@
 
     font = {
       name = "0xProto Nerd Font";
-      size = 12;
+      size = 10;
     };
 
     shellIntegration.mode = "no-cursor";

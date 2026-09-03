@@ -30,7 +30,8 @@
       launcher_window = {
         opacity = 0.98;
       };
+
+      keybinding = "vim";
     };
-    keybinding = "vim";
   };
 }
