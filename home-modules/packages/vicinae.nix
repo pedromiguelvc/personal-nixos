@@ -31,5 +31,6 @@
         opacity = 0.98;
       };
     };
+    keybinding = "vim";
   };
 }
