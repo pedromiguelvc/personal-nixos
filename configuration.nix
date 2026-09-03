@@ -17,10 +17,20 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "carburauto"; # Define your hostname.
+  networking = {
+    hostName = "carburauto"; # Define your hostname.
+    networkmanager.enable = true; # Configure network connections interactively with nmcli or nmtui.
 
-  # Configure network connections interactively with nmcli or nmtui.
-  networking.networkmanager.enable = true;
+    # Configure network proxy if necessary
+    # proxy.default = "http://user:password@proxy:port/";
+    # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+    # Open ports in the firewall.
+    # firewall.allowedTCPPorts = [ ... ];
+    # firewall.allowedUDPPorts = [ ... ];
+    # Or disable the firewall altogether.
+    # firewall.enable = false;
+  };
 
   nix = {
     settings = {
@@ -78,6 +88,7 @@
   hardware.bluetooth.enable = true;
   zramSwap.enable = true;
   systemd.oomd.enable = true;
+  security.rtkit.enable = true;
 
   virtualisation.docker = {
     enable = true;
@@ -89,13 +100,4 @@
     };
   };
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 }
