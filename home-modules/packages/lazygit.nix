@@ -23,14 +23,30 @@
       notARepository = "quit";
       customCommands = [
         {
-          key = "R";
+          key = "<c-r>";
           description = "Create GitHub PR";
           context = "localBranches";
+          prompts = [
+            {
+              type = "input";
+              key = "Base";
+              title = "Base branch";
+              initialValue = "main";
+              suggestions = {
+                preset = "branches";
+              };
+            }
+            {
+              type = "input";
+              key = "Title";
+              title = "PR title (empty to auto-fill from commits)";
+            }
+          ];
           command = ''
             git push -u origin {{.SelectedLocalBranch.Name}} &&
-            gh pr create --base main --fill
+            gh pr create --base {{.Form.Base}} {{if .Form.Title}}--title "{{.Form.Title}}" --body ""{{else}}--fill{{end}}
           '';
-          output = "terminal";
+          output = "log";
         }
       ];
     };
