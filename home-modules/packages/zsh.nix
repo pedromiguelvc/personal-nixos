@@ -17,7 +17,7 @@
     shellAliases = {
       nsu = "nix flake update";
       nr = "nix run";
-      nd = "nix develop";
+      nd = "nix develop --command zsh";
 
       ls = "eza --icons --group-directories-first";
       ll = "eza -lh --icons --group-directories-first";
