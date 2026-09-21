@@ -8,7 +8,6 @@
     ./kitty.nix
     ./neovim.nix
     ./vicinae.nix
-    ./nh.nix
     ./lazygit.nix
     ./tmux.nix
     ./obs-studio.nix
