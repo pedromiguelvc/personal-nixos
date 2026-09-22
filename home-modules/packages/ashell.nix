@@ -80,7 +80,7 @@
         show_bodies = true;
         toast = true;
         grouped = true;
-        toast_position = "bottom_right";
+        toast_position = "BottomRight";
         toast_timeout = 2000;
       };
 
@@ -121,7 +121,7 @@
       };
 
       appearance = {
-        style = "Islands";
+        surface = "transparent";
         font_name = "Ubuntu Nerd Font";
 
         primary_color = "#7aa2f7";
@@ -152,7 +152,7 @@
           type = "Button";
           icon = "󰂚";
           command = "swaync-client -t -sw";
-          listen_cmd = "swaync-client -swb";
+          listen_cmd = "swaync-client -swb | jq -r .alt";
 
           icons = {
             "^dnd-none$" = "󰂛";
