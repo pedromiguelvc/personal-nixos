@@ -13,7 +13,7 @@ nsb() { _nixos-rebuild build "$@" }
 
 function _launch_claude_code() {
   zle -I
-  claude
+  claude --continue
   zle reset-prompt
 }
 function _clear_prompt() {
