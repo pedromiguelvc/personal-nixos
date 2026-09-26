@@ -16,6 +16,7 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.extraModprobeConfig = "options btusb enable_autosuspend=n";
 
   networking = {
     hostName = "carburauto"; # Define your hostname.
