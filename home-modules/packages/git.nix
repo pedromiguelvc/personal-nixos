@@ -33,6 +33,7 @@
       diff = {
         context = 3;
         renames = "copies";
+        colorMoved = "default";
         interHunkContext = 10;
       };
 

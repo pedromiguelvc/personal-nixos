@@ -25,10 +25,12 @@
       settings = {
         battery = {
           governor = "powersave";
+          energy_performance_preference = "balance_power";
           turbo = "never";
         };
         charger = {
-          governor = "balanced";
+          governor = "powersave";
+          energy_performance_preference = "balance_performance";
           turbo = "auto";
         };
       };
@@ -43,7 +45,7 @@
         '';
         config = ''
           (defsrc
-            esc caps a s d f h j k l ;
+            esc caps y u i o p a s d f h j k l ;
           )
           (defvar
             tap-time  200
@@ -52,13 +54,13 @@
             right-hand-keys (y u i o p h j k l ; n m , . /)
           )
           (deflayer base
-            caps @cap @a @s @d @f h @j @k @l @;
+            caps @cap y u i o p @a @s @d @f h @j @k @l @;
           )
           (deflayer nomods
-            caps @cap a s d f h j k l ;
+            caps @cap y u i o p a s d f h j k l ;
           )
           (deflayer nav
-            caps XX lmet lalt lctl lsft left down up rght XX
+            caps XX home pgdn pgup end bspc lmet lalt lctl lsft left down up rght del
           )
           (deffakekeys
             to-base (layer-switch base)
