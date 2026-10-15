@@ -27,6 +27,7 @@
     stylua
     tree-sitter
     gh
+    tuicr
 
     brave
     hypridle

@@ -6,11 +6,11 @@
     ./fzf.nix
     ./git.nix
     ./kitty.nix
-    ./neovim.nix
-    ./vicinae.nix
     ./lazygit.nix
-    ./tmux.nix
+    ./neovim.nix
     ./obs-studio.nix
+    ./tmux.nix
+    ./vicinae.nix
     ./zoxide.nix
     ./zsh.nix
   ];
