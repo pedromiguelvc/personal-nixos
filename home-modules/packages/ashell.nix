@@ -152,7 +152,7 @@
           type = "Button";
           icon = "󰂚";
           command = "swaync-client -t -sw";
-          listen_cmd = "swaync-client -swb | jq -r .alt";
+          listen_cmd = "swaync-client -swb";
 
           icons = {
             "^dnd-none$" = "󰂛";
