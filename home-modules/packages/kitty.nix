@@ -48,6 +48,7 @@
       # General
       allow_remote_control = "yes";
       term = "xterm-kitty";
+      confirm_os_window_close = 0;
 
       # Window
       background_opacity = "0.90";

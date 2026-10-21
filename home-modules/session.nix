@@ -7,7 +7,7 @@
     ZSH_TMUX_AUTOSTART = "true";
     ZSH_TMUX_AUTOQUIT = "false";
 
-    FZF_DEFAULT_OPTS = "--bind=tab:down,shift-tab:up --layout=reverse";
+    FZF_DEFAULT_OPTS = "--layout=reverse";
   };
 
   home.sessionPath = [
