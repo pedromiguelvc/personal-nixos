@@ -70,7 +70,8 @@
       };
 
       media_player = {
-        max_title_length = 30;
+        indicator_visualizer = "Background";
+        max_text_length = 30;
         indicator_format = "IconAndTitle";
       };
 
