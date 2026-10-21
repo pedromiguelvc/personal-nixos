@@ -3,6 +3,7 @@
     ./ashell.nix
     ./delta.nix
     ./direnv.nix
+    ./devenv.nix
     ./fzf.nix
     ./git.nix
     ./kitty.nix
