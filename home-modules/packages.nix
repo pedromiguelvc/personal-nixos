@@ -10,6 +10,8 @@
     jq
     ripgrep
     trash-cli
+    cava
+    inotify-tools
     wl-clipboard
     gcc
     gnumake
