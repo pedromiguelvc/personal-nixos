@@ -63,6 +63,9 @@
     shellGlobalAliases = {
       J = "| jq";
       C = "| wl-copy";
+      G = "| rg";
+      NUL = "> /dev/null 2>&1";
+      NT = "; notify_done"; # defines in functions.zsh
     };
 
     oh-my-zsh = {
