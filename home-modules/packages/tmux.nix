@@ -6,13 +6,13 @@
 
     shortcut = "s";
     keyMode = "vi";
+    terminal = "tmux-256color";
     baseIndex = 1;
     customPaneNavigationAndResize = true;
     disableConfirmationPrompt = false;
     escapeTime = 0;
     aggressiveResize = true;
     clock24 = true;
-    newSession = true;
     mouse = true;
     focusEvents = true;
 
@@ -26,6 +26,7 @@
     extraConfig = builtins.readFile ./config/tmux/tmux.conf + ''
       run-shell ${pkgs.tmuxPlugins.mode-indicator.rtp}
       run-shell ${pkgs.tmuxPlugins.continuum.rtp}
+      run-shell ${pkgs.tmuxPlugins.tmux-fzf.rtp}
     '';
   };
 }

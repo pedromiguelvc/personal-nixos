@@ -17,9 +17,13 @@
       home-manager,
       ...
     }:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
     {
       nixosConfigurations.carburauto = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
 
         modules = [
           ./configuration.nix
@@ -37,5 +41,23 @@
           }
         ];
       };
+
+      apps.${system}.update-flake-lock = {
+        type = "app";
+        program = pkgs.lib.getExe (pkgs.callPackage ./scripts/update-flake-lock.nix { });
+        meta.description = "Update flake.lock and open or refresh the dependency PR";
+      };
+
+      legacyPackages.${system}.packageVersions =
+        let
+          cfg = self.nixosConfigurations.carburauto.config;
+          allPackages = cfg.environment.systemPackages ++ cfg.home-manager.users.carburauto.home.packages;
+        in
+        builtins.listToAttrs (
+          map (p: {
+            name = p.pname or p.name;
+            value = p.version or "unknown";
+          }) allPackages
+        );
     };
 }

@@ -1,0 +1,41 @@
+name: Update flake.lock
+
+on:
+  schedule:
+    - cron: "0 12 */3 * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Report only, open no PR"
+        type: boolean
+        default: false
+
+concurrency:
+  group: update-flake-lock
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: cachix/install-nix-action@v31
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+
+      - name: Update flake.lock
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
+        run: nix run .#update-flake-lock
