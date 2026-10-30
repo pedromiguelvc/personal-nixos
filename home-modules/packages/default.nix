@@ -6,6 +6,7 @@
     ./devenv.nix
     ./fzf.nix
     ./git.nix
+    ./tuicr.nix
     ./kitty.nix
     ./lazygit.nix
     ./neovim.nix
