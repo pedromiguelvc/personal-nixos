@@ -23,7 +23,7 @@
     libnotify
 
     lua-language-server
-    nil
+    nixd
     nixfmt
     luarocks
     stylua
