@@ -36,6 +36,16 @@
       };
     };
 
+    flatpak = {
+      enable = true;
+      packages = [ "com.brave.Browser" ];
+      uninstallUnmanaged = true;
+      update.auto = {
+        enable = true;
+        onCalendar = "weekly";
+      };
+    };
+
     kanata = {
       enable = true;
       keyboards.default = {

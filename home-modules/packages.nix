@@ -31,7 +31,6 @@
     gh
     tuicr
 
-    brave
     hypridle
     hyprlock
     hyprpaper
