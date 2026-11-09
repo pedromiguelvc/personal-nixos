@@ -1,4 +1,3 @@
-```bash
 #!/usr/bin/env bash
 # Runs `nix flake update` and opens (or refreshes) one PR with the new
 # flake.lock, listing every dev-shell tool whose version changes.
@@ -138,4 +137,3 @@ else
 fi
 
 echo "Done!"
-```

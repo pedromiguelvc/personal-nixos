@@ -8,8 +8,7 @@
     };
 
     settings = {
-      log_level = "warn";
-
+      logging.level = "debug";
       position = "Bottom";
       outputs = "All";
 
@@ -33,9 +32,7 @@
         max_workspaces = 10;
       };
 
-      tempo = {
-        clock_format = "%a %d %b %R";
-      };
+      tempo.clock_format = "%a %d %b %R";
 
       system_info = {
         indicators = [
@@ -122,7 +119,7 @@
       };
 
       appearance = {
-        surface = "transparent";
+        bar.surface = "transparent";
         font_name = "Ubuntu Nerd Font";
 
         primary_color = "#7aa2f7";
@@ -142,9 +139,7 @@
           strong = "#414868";
         };
 
-        menu = {
-          opacity = 0.7;
-        };
+        opacity = 0.7;
       };
 
       CustomModule = [
