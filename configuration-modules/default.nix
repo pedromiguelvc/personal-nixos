@@ -1,8 +1,4 @@
+{ ... }:
 {
-  imports = [
-    ./services.nix
-    ./system.nix
-    ./users.nix
-    ./programs.nix
-  ];
+  imports = import ../lib/import-modules.nix ./.;
 }
