@@ -1,4 +1,34 @@
 {
+  boot = {
+    kernel.sysctl = {
+      "kernel.sysrq" = 1;
+      "kernel.softlockup_panic" = 1;
+      "kernel.hardlockup_panic" = 1;
+      "kernel.panic" = 10;
+    };
+    blacklistedKernelModules = [ "intel_oc_wdt" ]; # intel_oc_wdt keeps counting during suspend and resets the laptop; iTCO_wdt pauses itself.
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    extraModprobeConfig = "options btusb enable_autosuspend=n";
+  };
+
+  systemd = {
+    oomd.enable = true;
+    settings.Manager = {
+      RuntimeWatchdogSec = "60s";
+      RebootWatchdogSec = "5min";
+    };
+  };
+
+  hardware = {
+    enableRedistributableFirmware = true;
+    bluetooth.enable = true;
+  };
+
+  zramSwap.enable = true;
+  security.rtkit.enable = true;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you

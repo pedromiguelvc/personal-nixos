@@ -13,11 +13,6 @@
     ./configuration-modules
   ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.extraModprobeConfig = "options btusb enable_autosuspend=n";
-
   networking = {
     hostName = "carburauto"; # Define your hostname.
     networkmanager.enable = true; # Configure network connections interactively with nmcli or nmtui.
@@ -63,16 +58,6 @@
     useXkbConfig = true; # use xkb.options in tty.
   };
 
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
-  environment.systemPackages = with pkgs; [
-    unzip
-    brightnessctl
-    playerctl
-    wget
-    vim
-  ];
-
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
@@ -84,12 +69,6 @@
       ];
     };
   };
-
-  hardware.enableRedistributableFirmware = true;
-  hardware.bluetooth.enable = true;
-  zramSwap.enable = true;
-  systemd.oomd.enable = true;
-  security.rtkit.enable = true;
 
   virtualisation.docker = {
     enable = true;
