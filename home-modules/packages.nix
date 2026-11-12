@@ -29,7 +29,6 @@
     stylua
     tree-sitter
     gh
-    tuicr
 
     hypridle
     hyprlock
