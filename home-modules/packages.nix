@@ -8,10 +8,9 @@
     eza
     fd
     jq
+    gh
     ripgrep
     trash-cli
-    cava
-    inotify-tools
     wl-clipboard
     gcc
     gnumake
@@ -21,15 +20,6 @@
     fastfetch
     cliphist
     libnotify
-
-    lua-language-server
-    nixd
-    nixfmt
-    luarocks
-    stylua
-    tree-sitter
-    gh
-
     hypridle
     hyprlock
     hyprpaper

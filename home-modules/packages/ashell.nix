@@ -1,4 +1,11 @@
 {
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+
+{
   programs.ashell = {
     enable = true;
 
@@ -162,4 +169,11 @@
       ];
     };
   };
+
+  home.packages = lib.optionals config.programs.ashell.enable (
+    with pkgs;
+    [
+      cava
+    ]
+  );
 }
