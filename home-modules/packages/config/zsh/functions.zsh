@@ -1,5 +1,6 @@
 zstyle ':completion:*' menu select
 setopt auto_menu
+bindkey -v
 
 notify_done() {
     local status_code=$?
@@ -21,25 +22,3 @@ _nixos-rebuild() {
 ns()  { _nixos-rebuild switch "$@" }
 nst() { _nixos-rebuild test "$@" }
 nsb() { _nixos-rebuild build "$@" }
-
-function _launch_claude_code() {
-  zle -I
-  claude --continue
-  zle reset-prompt
-}
-function _clear_prompt() {
-  zle -I
-  clear
-  zle reset-prompt
-}
-function _exit_shell() {
-  exit
-}
-
-zle -N _launch_claude_code
-zle -N _clear_prompt
-zle -N _exit_shell
-
-bindkey '^Xc' _launch_claude_code
-bindkey '^Xx' _clear_prompt
-bindkey '^Xe' _exit_shell

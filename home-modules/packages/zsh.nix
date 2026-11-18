@@ -15,9 +15,10 @@
     historySubstringSearch.enable = true;
 
     shellAliases = {
-      nsu = "nix flake update";
       nr = "nix run";
+      ne = "nix eval";
       nd = "nix develop --command zsh";
+      nu = "nix flake update";
 
       ls = "eza --icons --group-directories-first";
       ll = "eza -lh --icons --group-directories-first";
@@ -90,7 +91,6 @@
     ];
 
     initContent = ''
-      bindkey -v
       source ~/.config/zsh/functions.zsh
       source ~/.config/zsh/p10k.zsh
     '';

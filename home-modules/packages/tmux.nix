@@ -62,7 +62,7 @@ in
     terminal = "tmux-256color";
     baseIndex = 1;
     customPaneNavigationAndResize = true;
-    disableConfirmationPrompt = false;
+    disableConfirmationPrompt = true;
     escapeTime = 0;
     aggressiveResize = true;
     clock24 = true;
