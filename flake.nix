@@ -47,11 +47,19 @@
         ];
       };
 
-      apps.${system}.update-flake-lock = {
-        type = "app";
-        program = pkgs.lib.getExe (pkgs.callPackage ./scripts/update-flake-lock.nix { });
-        meta.description = "Update flake.lock and open or refresh the dependency PR";
-      };
+      apps.${system} =
+        let
+          scripts = pkgs.callPackage ./scripts { };
+          mkApp = description: drv: {
+            type = "app";
+            program = pkgs.lib.getExe drv;
+            meta = { inherit description; };
+          };
+        in
+        {
+          update-flake-lock = mkApp "Update flake.lock and open the dependency PR" scripts.pr;
+          preview-flake-update = mkApp "Preview package changes of a flake update" scripts.preview;
+        };
 
       legacyPackages.${system}.packageVersions =
         let
@@ -64,5 +72,6 @@
             value = p.version or "unknown";
           }) allPackages
         );
+
     };
 }
