@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   services = {
@@ -20,6 +20,11 @@
         control-center-margin-right = 10;
         control-center-margin-left = 10;
       };
+    };
+
+    cliphist = {
+      enable = true;
+      allowImages = true;
     };
 
     hypridle = {

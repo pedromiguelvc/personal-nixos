@@ -30,6 +30,8 @@
       flake = "/home/carburauto/nixos";
     };
 
+    hyprlock.enable = true;
+
     nix-ld.enable = true;
 
     zsh.enable = true;
