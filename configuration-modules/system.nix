@@ -6,12 +6,10 @@
       "kernel.hardlockup_panic" = 1;
       "kernel.panic" = 10;
     };
-    blacklistedKernelModules = [ "intel_oc_wdt" ]; # intel_oc_wdt keeps counting during suspend and resets the laptop; iTCO_wdt pauses itself.
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    extraModprobeConfig = "options btusb enable_autosuspend=n";
   };
 
   systemd = {
