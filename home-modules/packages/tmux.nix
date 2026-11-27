@@ -76,13 +76,15 @@ in
       mode-indicator
       tmux-fzf
     ];
-    extraConfig =
-      builtins.readFile ./config/tmux/tmux.conf
-      + toolBindings
-      + ''
-        run-shell ${pkgs.tmuxPlugins.mode-indicator.rtp}
-        run-shell ${pkgs.tmuxPlugins.continuum.rtp}
-        run-shell ${pkgs.tmuxPlugins.tmux-fzf.rtp}
-      '';
+    extraConfig = ''
+      set-environment -g TMUX_FZF_PATH "${dirOf pkgs.tmuxPlugins.tmux-fzf.rtp}"
+    ''
+    + builtins.readFile ./config/tmux/tmux.conf
+    + toolBindings
+    + ''
+      run-shell ${pkgs.tmuxPlugins.mode-indicator.rtp}
+      run-shell ${pkgs.tmuxPlugins.continuum.rtp}
+      run-shell ${pkgs.tmuxPlugins.tmux-fzf.rtp}
+    '';
   };
 }

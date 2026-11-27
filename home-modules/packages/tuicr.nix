@@ -12,6 +12,8 @@
       editor = "nvim";
       comment_vim = false;
       relative_line_numbers = false;
+      show_pr_checks = true;
+      no_update_check = true;
       q_quits = true;
     };
   };
